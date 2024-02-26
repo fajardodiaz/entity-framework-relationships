@@ -30,6 +30,7 @@ namespace EntityFramework.Configuration
             CreateMap<Character, CreateCharacterDto>().ReverseMap();
             CreateMap<Character, UpdateCharacterDto>().ReverseMap();
             CreateMap<Character, GetCharacterDto>().ReverseMap();
+
         }
     }
 }

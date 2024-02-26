@@ -84,7 +84,7 @@ namespace EntityFramework.Controllers
             }
             catch(DbUpdateException)
             {
-                return BadRequest("Error inserting a duplicate key  ");
+                return BadRequest("Error inserting a duplicate key");
             }
 
             return Ok(updateBackpackDto);

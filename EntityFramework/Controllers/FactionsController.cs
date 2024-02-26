@@ -104,6 +104,7 @@ namespace EntityFramework.Controllers
                 _context.Factions.Add(faction);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction("GetFaction", new { id = faction.Id }, faction);
+
             }catch(DbUpdateConcurrencyException)
             {
                 return BadRequest();

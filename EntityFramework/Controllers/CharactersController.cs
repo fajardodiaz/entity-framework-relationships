@@ -38,7 +38,11 @@ namespace EntityFramework.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<GetCharacterDto>> GetCharacter(int id)
         {
-            var character = await _context.Characters.FindAsync(id);
+            var character = await _context.Characters
+                .Include(c => c.Backpack)
+                .Include(c => c.Weapons)
+                .Include(c => c.Factions)
+                .FirstOrDefaultAsync(c => c.Id == id);
 
             if (character == null)
             {
