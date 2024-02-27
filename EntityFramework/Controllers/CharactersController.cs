@@ -28,7 +28,12 @@ namespace EntityFramework.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GetCharacterDto>>> GetCharacters()
         {
-            var charactersDto = await _context.Characters.ToListAsync();
+            var charactersDto = await _context.Characters
+                .Include(c => c.Backpack)
+                .Include(c => c.Weapons)
+                .Include(c => c.Factions)
+                .ToListAsync();
+
             var records = _mapper.Map<List<GetCharacterDto>>(charactersDto);
 
             return records;

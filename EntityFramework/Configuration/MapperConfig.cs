@@ -14,11 +14,13 @@ namespace EntityFramework.Configuration
             // BackpackDto
             CreateMap<Backpack, CreateBackpackDto>().ReverseMap();
             CreateMap<Backpack, GetBackpackDto>().ForMember(dest => dest.CharacterName, opt => opt.MapFrom(src => src.Character.Name)).ReverseMap();
+            CreateMap<Backpack, GetBackpackWithoutCharacterDto>().ReverseMap();
             CreateMap<Backpack, UpdateBackpackDto>().ReverseMap();
 
             // Weapon Dto
             CreateMap<Weapon, CreateWeaponDto>().ReverseMap();
             CreateMap<Weapon, GetWeaponDto>().ForMember(dest=> dest.CharacterName, opt => opt.MapFrom(src => src.Character.Name)).ReverseMap();
+            CreateMap<Weapon, GetWeaponWithoutCharacterDto>().ReverseMap();
             CreateMap<Weapon, UpdateWeaponDto>().ReverseMap();
 
             // Faction Dto

@@ -8,8 +8,8 @@ namespace EntityFramework.Models.Character
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public GetBackpackDto Backpack { get; set; }
+        public GetBackpackWithoutCharacterDto Backpack { get; set; }
         public List<GetFactionDto> Factions { get; set; }
-        public List<GetWeaponDto> Weapons { get; set; }
+        public List<GetWeaponWithoutCharacterDto> Weapons { get; set; }
     }
 }
